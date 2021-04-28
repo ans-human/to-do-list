@@ -7,19 +7,19 @@ import Tasks from '../Tasks/Tasks';
 import Form from '../Form/Form';
 
 const Home = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => { 
-    dispatch(getTasks(user.result.id));
+    dispatch(getTasks(JSON.parse(localStorage.getItem('profile'))?.result?.id));
   }, [currentId, dispatch]);
 
   return (
     <Grow in>
       <Container>
         <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-          <Grid item xs={12} sm={7}>
+          <Grid item xs={12} sm={6}>
             <Tasks setCurrentId={setCurrentId} />
           </Grid>
           <Grid item xs={12} sm={4}>

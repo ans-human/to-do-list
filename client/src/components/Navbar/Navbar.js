@@ -21,6 +21,7 @@ const Navbar = () => {
     history.push('/auth');
 
     setUser(null);
+    localStorage.clear();
   };
 
   useEffect(() => {

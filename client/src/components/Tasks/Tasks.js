@@ -10,10 +10,10 @@ const Tasks = ({ setCurrentId }) => {
   const classes = useStyles();
   // console.log(tasks);
   return (
-    !tasks.length ? <CircularProgress /> : (
+     (
       <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-        {tasks.map((task) => (
-          <Grid key={task.id} item xs={12} sm={6} md={6}>
+        {tasks.slice(0).reverse().map((task) => (
+          <Grid key={task.id} item xs={12} sm={12} md={12}>
             <Task task={task} setCurrentId={setCurrentId} />
           </Grid>
         ))}
