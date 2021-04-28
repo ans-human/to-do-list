@@ -9,8 +9,8 @@ export default (tasks = [], action) => {
     case CREATE:
       return [...tasks,action.payload.data];
     case UPDATE:
-      console.log( action.payload.id, action.payload.task);
-      return tasks.map((task) => (task.id === action.payload.id ? action.payload.task : task));
+      console.log( action.payload.task);
+      return tasks.map((task) => (task.id === action.payload.task.id ? action.payload.task : task));
     case DELETE:
       return tasks.filter((task) => (task.id !== action.payload));
     default:

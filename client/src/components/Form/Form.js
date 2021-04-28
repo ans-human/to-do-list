@@ -12,7 +12,7 @@ const Form = ({ currentId, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
-  
+  // console.log(task);
   useEffect(() => {
     if (task) setTaskData({title: task.task});
   }, [task]);
@@ -50,12 +50,6 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">{currentId ? `Editing Task` : 'Add a Task'}</Typography>
         
         <TextField name="title" variant="outlined" label="Title" fullWidth value={taskData.title} onChange={(e) => setTaskData({ ...taskData, title: e.target.value })} />
-        
-        {/* <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={taskData.message} onChange={(e) => setTaskData({ ...taskData, message: e.target.value })} /> */}
-        
-        {/* <TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={taskData.tags} onChange={(e) => setTaskData({ ...taskData, tags: e.target.value.split(',') })} /> */}
-        
-        {/* <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setTaskData({ ...taskData, selectedFile: base64 })} /></div> */}
        
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
         

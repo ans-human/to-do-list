@@ -13,7 +13,7 @@ const Task = ({ task, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
-  
+  console.log(task);
   // const Likes = () => {
   //   if (task.likes.length > 0) {
   //     return task.likes.find((like) => like === (user?.result?.googleId || user?.result?.id))
